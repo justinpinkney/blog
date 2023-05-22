@@ -1,0 +1,24 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+{% set postslist = collections.posts %}
+{% set d = undefined %}
+<ol reversed class="postlist">
+{% for post in postslist | reverse %}
+    {% set currYear = post.date | readableDate("yyyy") %}
+    {% if prevYear != currYear %}
+        <li class="postlist-year">{{ currYear }}</li>
+        {% set prevYear = currYear %}
+    {% endif %}
+
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ post.url }}">
+
+			<p class="postlist-title">{{ post.data.title }}</p>
+		</a>
+	</li>
+{% endfor %}
+</ol>

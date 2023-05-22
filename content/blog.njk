@@ -1,0 +1,54 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Archive
+  order: 2
+pagination:
+  data: collections.posts
+  reverse: true
+  size: 5
+permalink: "archive/page-{{ pagination.pageNumber + 1 }}/index.html"
+
+---
+{% css %}
+nav {
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+}
+nav a {
+    text-decoration: none;
+    color: blue;
+    float: left;
+    padding: 10px 15px;
+ border-radius: 10px;
+ transition: background-color .5s;
+}
+
+nav a.active {
+    background-color: lightblue;
+    color: lightblue;
+ border-radius: 10px;
+}
+
+nav a:hover:not(.active) {
+    background-color: lightgray;
+}
+{% endcss %}
+
+<h1>Archive</h1>
+
+{% set postslist = pagination.items  | reverse %}
+{% include "postslist.njk" %}
+
+
+<nav aria-labelledby="my-pagination">
+    {% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}"><<</a>{% else %}<<{% endif %}
+    {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}"><</a>{% else %}<{% endif %}
+{%- for pageEntry in pagination.pages %}
+    <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+{%- endfor %}
+    {% if pagination.href.next %}<a href="{{ pagination.href.next }}">></a>{% else %}>{% endif %}
+    {% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">>></a>{% else %}>>{% endif %}
+</nav>
+
