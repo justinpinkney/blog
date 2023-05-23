@@ -2,18 +2,35 @@
 title: Big images with Leaflet 🗺️
 date: "2020-07-13"
 description: Incorporating big zoomable images into an MDX blog with Leaflet
-cover: leaflet.jpg  
+cover: leaflet.jpg
 ---
 
-import BigImage from "../../../src/components/BigImage"
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+ <div id="map" style="height: 400px"></div>
+
+ <script>
+
+	const map = L.map('map', {
+        crs: L.CRS.Simple
+    }).setView([-0.25, 0.35], 10);
+
+	const tiles = L.tileLayer(
+        "https://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg",
+        {minZoom:9, maxZoom:14 }
+    ).addTo(map);
+
+</script>
 
 __Below is a big image produced by my neural network feature visalisation library [Sumie](https://github.com/justinpinkney/sumie) please zoom in.__
 
-<BigImage 
-    options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } } 
-    tile_url="https://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg" />
-
-<br />
 
 This page is mostly just a test of the integration of Leaflet for displaying big images on my Gatsby powered homepage. Below are some brief scratchings on how this works so I don't forget.
 
@@ -50,8 +67,8 @@ _One small issue with the above is that Leaflet doesn't like fractional tiles so
 Incorporating leaflet into a Gatsby site is happily very simple[^1] thanks to the [Gatsby React-Leaflet plugin](https://github.com/dweirich/gatsby-plugin-react-leaflet) which takes care of properly wrapping up the existing React-leaflet library (which itself makes Leaflet accessible as React components). Writing the r[eact component required to display the image](https://github.com/justinpinkney/justinpinkney.com/blob/master/src/components/BigImage.js) is very straightforward and then I can directly write the following in my markdown file to give the zoomable image at the top of the page.
 
 ```markdown
-<BigImage 
-    options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } } 
+<BigImage
+    options={ {center:[-0.25, 0.35], zoom:10, minZoom:9, maxZoom:14 } }
     tile_url="http://assets.justinpinkney.com/sandbox/montage/montage_files/{z}/{x}_{y}.jpg" />
 ```
 
