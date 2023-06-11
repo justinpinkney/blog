@@ -5,7 +5,7 @@ description: Takes a picture and rearranges the pixels to make another
 cover: 2.jpg
 ---
 
-![](ColourSorterLogo.jpg)
+{% blogImage "ColourSorterLogo.jpg", "" %}
 __Takes a picture and rearranges the pixels to make another.__
 
 A little [[generative art]] Java application I made a long time ago which implements an algorithm to take all the pixels from an image and use them to make a new image, based on a (sort of) sorting algorithm.
@@ -18,24 +18,24 @@ You can find the [source code on GitHub.](https://github.com/justinpinkney/Colou
 
 ## Examples
 
-![](0.jpg)
+{% blogImage "0.jpg", "" %}
 
-![](1.jpg)
+{% blogImage "1.jpg", "" %}
 
-![](2.jpg)
+{% blogImage "2.jpg", "" %}
 
-![](3.jpg)
+{% blogImage "3.jpg", "" %}
 
-![](4.jpg)
+{% blogImage "4.jpg", "" %}
 
-![](5.jpg)
+{% blogImage "5.jpg", "" %}
 
-![](6.jpg)
+{% blogImage "6.jpg", "" %}
 
-![](8.jpg)
+{% blogImage "8.jpg", "" %}
 
-![](9.jpg)
+{% blogImage "9.jpg", "" %}
 
-![](10.jpg)
+{% blogImage "10.jpg", "" %}
 
-![](11.jpg)
+{% blogImage "11.jpg", "" %}

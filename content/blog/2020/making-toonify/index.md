@@ -43,17 +43,17 @@ So after a few evenings of putting together a small app using Flask and Bootstra
 
 So after some beta testing with friends I announced the release of the [Toonify Yourself](https://toonify.justinpinkney.com) website on Twitter. It quickly got some reasonable traffic and people seemed to be enjoying trying the model out on themselves.
 
-![](toonify.jpg)
+{% blogImage "toonify.jpg", "" %}
 
 Some were complaining that their faces were never detected no matter what they submitted, and I fairly quickly figured out (and many helpful people online started to point out) that it was an issue with image rotation on iPhones[^transpose].
 
 By the next morning traffic started to really pick up, partly due to getting on the front page of [Hacker News](https://news.ycombinator.com/item?id=24494377). I was starting to get a little bit twitchy seeing the number of containers spun up on Cloud Run steadily increasing. As lunch time approached we were getting close to 25,000 page views an hour, at times this was requiring 100 containers to service the traffic, and thing were going up fast.
     
-![](page-views.png)
+{% blogImage "page-views.png", "" %}
 
 The measly number of free cpu and ram minutes had long since evaporated, and I was getting a little concerned about what the cloud bill was going to be after I came back from an afternoon out of the house. So rather than limit things to a level that most people would get a non-response from the site, I decided to turn off the model and switch to an apology message.
 
-![](offline.jpg)
+{% blogImage "offline.jpg", "" %}
 
 ## The numbers
 

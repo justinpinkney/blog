@@ -21,7 +21,7 @@ Since R2019b MATLAB has had support for a low-level interface to deep learning. 
 
 So as an exercise in testing out the new features and really getting to grips with the details of StyleGAN, I ported the original to MATLAB. Below is a version of the classic style mixing figure from the original paper (using the original FFHQ model)
     
-![](style_mixing.jpg)
+{% blogImage "style_mixing.jpg", "" %}
 
 To use a pre-trained generator I have a [small bit of Python code](https://github.com/justinpinkney/stylegan-matlab-playground/blob/master/scripts/stylegan_convertor.ipynb) (which you can run freely in Colab without needing any Python setup) which allows you to take a model trained in the original implementation and convert the weights to a .mat file for use in MATLAB. If you're looking for some pre-trained models a good place is [my pretrained StyleGAN model collection](https://github.com/justinpinkney/awesome-pretrained-stylegan).
     
@@ -35,9 +35,9 @@ The big advantage (at least for me) of having an implementation in MATLAB, rathe
 
 Currently there is a system of callbacks so that you can reach into the model and mess around with things like the internal activations. Here's an example where you can modify the learned constant that is at the begning of the model to change the content of the generated image. If you extend it you can create more background (or endless hair), if you set it to some random numbers you get a mish mash of facial features.
 
-![](padded.jpg) 
+{% blogImage "padded.jpg", "" %} 
 
-![](randomised.jpg)
+{% blogImage "randomised.jpg", "" %}
 
 And here's another where I'm using just rotating the activations at a particular layer. If you're interested in what can be done with this sort of approach, see the [work by Terence Broad](https://terencebroad.com/research/network-bending) which takes the idea a lot further.
 

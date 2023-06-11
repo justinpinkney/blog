@@ -25,7 +25,7 @@ Apart from just generating some example image of whatever the model was trained 
 
 If you want to train a model which is similar to an existing one, for example [[ukiyoe-yourself:Ukiyo-e faces]] then taking a pre-trained model as your starting point to get you some decent results within just a few hours rather than days of training time.
 
-![](../ukiyoe-yourself/fakes000312.jpg)
+{% blogImage "../ukiyoe-yourself/fakes000312.jpg", "" %}
 
 ### Get weird results with intermediate models and mixing
 
@@ -36,7 +36,7 @@ Transfer learning (aka fine-tuning) also sometimes gives you some pretty interes
 
 In fact you can go further and combine two models, one which has been fine-tuned from another and either do weight averaging or [[ukiyoe-yourself:layer swapping]] to effectively mix the outputs.
 
-![](../ukiyoe-yourself/montage.jpg)
+{% blogImage "../ukiyoe-yourself/montage.jpg", "" %}
 
 ### Do experiments and investigate the properties of a latent space
 
@@ -55,4 +55,4 @@ If you have a StyleGAN model you'd like to share I'd love it if you contribute t
 - [Awesome Pretrained StyleGAN](https://github.com/justinpinkney/awesome-pretrained-stylegan)
 - [Awesome Pretrained StyleGAN 2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)
 
-![](pretrained.jpg)
+{% blogImage "pretrained.jpg", "" %}

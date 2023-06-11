@@ -9,7 +9,7 @@ My biophysics phd was focused on single molecule fluorescence methods for studyi
 
 A bit more specifically I used single molecule methods such as FRET (Forster resonance energy transfer), PIFE (protein induced fluorescence enhancement), and a method I developed, TFM (tethered fluorophore motion), to study a range of DNA processing proteins (DNA polymerase, recombinases, and motor proteins).
 
-![](biophysics.jpg)
+{% blogImage "biophysics.jpg", "" %}
 
 This was where I first started to write code in earnest, learnt the appeal of building tools and methods, started processing images, and got to play with lasers.
 

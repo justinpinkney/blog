@@ -9,9 +9,9 @@ import StructuredData from "../../../src/components/StructuredData"
 
 <StructuredData />
 
-__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
+__[Download the dataset: V2](https://drive.google.com/file/d/1zEgVLrKVp8oCZuX0NENcAeh-kdaKJzNG/view?usp=sharing)__ ![]("https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
 
-![](ukiyoe-dataset.jpg)
+{% blogImage "ukiyoe-dataset.jpg", "" %}
 
 As part of my paper [Resolution Dependent GAN Interpolation for Controllable Image Synthesis Between Domains](https://arxiv.org/abs/2010.05334)[^rdgi] I use a dataset of Ukiyo-e face images for training a StyleGAN model, this post contains a link to, and details of that dataset.
 
@@ -22,11 +22,29 @@ As part of my paper [Resolution Dependent GAN Interpolation for Controllable Ima
 
 ## The dataset
 
-import BigImage from "../../../src/components/BigImage"
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
 
-<BigImage 
-    options={ {center:[-0.25, 0.35], zoom:12, minZoom:9, maxZoom:15 } } 
-    tile_url="https://assets.justinpinkney.com/blog/ukiyoe/ukiyoe_files//{z}/{x}_{y}.jpg" />
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+ <div id="map" style="height: 400px"></div>
+
+ <script>
+
+	const map = L.map('map', {
+        crs: L.CRS.Simple
+    }).setView([-0.25, 0.35], 12);
+
+	const tiles = L.tileLayer(
+        "https://assets.justinpinkney.com/blog/ukiyoe/ukiyoe_files//{z}/{x}_{y}.jpg",
+        {minZoom:9, maxZoom:15 }
+    ).addTo(map);
+
+</script>
 
 The ukiyo-e faces dataset comprises of 5209 images of faces from ukiyo-e prints. The images are 1024x1024 pixels in jpeg format and have been aligned using the procedure used for the [FFHQ dataset](https://github.com/NVlabs/ffhq-dataset). Above is a map of (almost) all the images in the dataset, images are plotted such that similar faces appear close together[^map]. The images have been downscaled to 256x256 for display.
 
@@ -38,7 +56,7 @@ Images are scraped from several museum websites, I then used Amazon Rekognition 
 
 [KaoKore](https://github.com/rois-codh/kaokore) is another dataset of Ukiyo-e faces[^kao], it is more varied and labelled, however the image resolution is lower and faces are not aligned.
 
-![](kaokore_example.jpg)
+{% blogImage "kaokore_example.jpg", "" %}
 
 ## License and usage
 
@@ -54,7 +72,7 @@ If using the dataset please cite as "Aligned ukiyo-e faces dataset, Justin Pinkn
       title = {Aligned Ukiyo-e faces dataset},
       year={2020},
       howpublished= {\url{https://www.justinpinkney.com/ukiyoe-dataset}}
-} 
+}
 ```
 
 [^rdgi]: Pinkney, Justin N. M., and Doron Adler. ‘Resolution Dependent GAN Interpolation for Controllable Image Synthesis Between Domains’. ArXiv:2010.05334 [Cs, Eess], 20 October 2020. http://arxiv.org/abs/2010.05334.

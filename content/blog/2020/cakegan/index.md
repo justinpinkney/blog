@@ -41,11 +41,11 @@ In their raw form they're not really suitable for training StyleGAN, in particul
 
 Conveniently there are a wealth of pre-trained cake detectors available! They aren't usually called that, but it happens that "cake" is one of the categories in the COCO object detection challenge, so any COCO detector can find cakes. Using the best model from [Detectron2](https://github.com/facebookresearch/detectron2) makes this a pretty easy task.
 
-![](process.jpg)
+{% blogImage "process.jpg", "" %}
 
 Then sprinkle on a bit of padding, cropping, and resizing as required and that's the main ingredient ready to go, here's what it should look like:
 
-![](cakes-prepped.jpg)
+{% blogImage "cakes-prepped.jpg", "" %}
 
 ### Train your model
 
@@ -57,21 +57,40 @@ If you get a P100 via Colab the training process takes about 9 minutes per tick[
 
 Overall I trained for around 5 million images (which works out around 6 days of training) achieving an FID of 13.6. The loss and FID curves are shown below, and you can see that I could have probably kept on training (the FID is still going down and there doesn't seem to be much sign of the discriminator over fitting[^5]) but the gains seemed pretty marginal at that point.
 
-![](fid.png)
+{% blogImage "fid.png", "" %}
 
-![](scores.png)
+{% blogImage "scores.png", "" %}
 
 You'll know when your CakeGAN is fully baked when the FID no longer improves, or a skewer inserted comes out clean or it springs back lightly when poked. Here's a small selection of generated cakes.
 
-![](fakesgrid.jpg)
+{% blogImage "fakesgrid.jpg", "" %}
 
 And below is a zoomable grid arranged using feature extracted using an imagenet pretrained CNN projected into 2D using UMAP.
 
-import BigImage from "../../../src/components/BigImage"
 
-<BigImage
-    options={ {center:[-0.25, 0.35], zoom:12, minZoom:9, maxZoom:15 } }
-    tile_url="https://assets.justinpinkney.com/blog/cakegan/cakes-generated_files//{z}/{x}_{y}.jpg" />
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+ <div id="map" style="height: 400px"></div>
+
+ <script>
+
+	const map = L.map('map', {
+        crs: L.CRS.Simple
+    }).setView([-0.25, 0.35], 12);
+
+	const tiles = L.tileLayer(
+        "https://assets.justinpinkney.com/blog/cakegan/cakes-generated_files//{z}/{x}_{y}.jpg",
+        {minZoom:9, maxZoom:15 }
+    ).addTo(map);
+
+</script>
 
 You can download the final trained model from my [Awesome Pretrained StyleGAN 2 repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2/#cakes).
 
@@ -79,15 +98,15 @@ You can download the final trained model from my [Awesome Pretrained StyleGAN 2 
 
 Once we've the model has cooled it should be serving up some delicious interpolation videos. But the best part of a well baked GAN is the smooth and creamy latent space. For a start StyleGAN is famous (in part) for its style mixing capabilities, so let's mix some cakes.
 
-![](grid-0_4.jpg)
+{% blogImage "grid-0_4.jpg", "" %}
 
 If I want to make a cake editor I need to try and find meaningful directions in the latent space. I've got a dataset with some noisy labels I could try and use, but for a first pass using [GANSpace](https://github.com/harskish/ganspace) is a quick and easy way of trying to automatically find meaningful directions[^ganspace-notebook].
 
 Some of the directions found by GANSpace seem promising, there are some hints of cake to slice, or more chocolate or fruit topping vectors. But the results below are very cherry picked and these don't seem to generalise terribly well.
 
-![](cake-fruit.jpg)
-![](cake-slice.jpg)
-![](cake-chocolate.jpg)
+{% blogImage "cake-fruit.jpg", "" %}
+{% blogImage "cake-slice.jpg", "" %}
+{% blogImage "cake-chocolate.jpg", "" %}
 
 
 [^1]: This scraper is based on a Google image scraper which now seems to have been broken by changes in the Google images search page.

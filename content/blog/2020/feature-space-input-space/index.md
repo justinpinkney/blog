@@ -7,7 +7,7 @@ cover: flowers-cut.jpg
 
 ## Input space and Feature space are different sides of the looking glass
 
-<!-- image "./ext-alice1.jpg", "alice in wonderland" %} --> -->
+{% blogImage "./ext-alice1.jpg", "alice in wonderland"%}
 
 Neural networks (for image tasks) take in images and put them through a series of, typically convolutional, transformations. The world of those input images consisting of red, green, and blue pixel values we can call **input space** and the intermediate values that get computed in the network, the transformed versions of the images, we might call **feature space**.
 
@@ -37,7 +37,7 @@ Clearly, adapting the concept of input normalisation to feature space is not tri
 
 ## Dropout works in feature space
 
-![](ext-alice2.jpg)
+{% blogImage "ext-alice2.jpg", "" %}
 
 This pattern of taking concepts from one space and translating them to the other has also been applied to the regularisation technique of dropout. In dropout we randomly set the activations of some neurons to zero during training. It was popularised by use in AlexNet and for a while was extremely common practice in deep learning. The fact that this rather extreme procedure of setting (often significant) amounts of the feature space pixels to zero should actually work, let alone be beneficial, is not at first glance obvious (at least not to me), but there are various intuitive explanations for why this should be.[^thinking-about-dropout]
 
@@ -45,7 +45,7 @@ Nowadays dropout is less prevalent than it used to be. This would seem to be in 
 
 ## Cutout is dropout in Input space
 
-![](ext-scissors.jpg)
+{% blogImage "ext-scissors.jpg", "" %}
 
 So if dropout was a successful approach for regularisation which works by zeroing pixels in feature space, can this be translated to input space? One problem is that dropout only seems to work well for fully connected layers and not so much for convolutional ones.
 
@@ -61,7 +61,7 @@ DeVries and Taylor introduced a data augmentation method called Cutout in the pa
 
 The spatial prior they mention above is the fact that they remove a contiguous patch of the input images (they use a rectangle but state that the shape is not important) rather than zeroing random pixels as in dropout.
 
-![](flowers-cut.jpg)
+{% blogImage "flowers-cut.jpg", "" %}
 
 One other difference here is the difference in training and test time weight scaling that is used in dropout is no longer required. For the input space we centre our data around zero (which is not true in feature space), so as long as we fill our patches zero won't affect the expected bias.
 

@@ -11,7 +11,7 @@ If you want to just try out the model look here:
 
 __All of this work was done as part of my [[day job]] at [Lambda Labs](https://lambdalabs.com/) and all the real details of how the model was made, and how you can make one yourself are in this post on the [Lambda Examples repo](https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning). This blog post just has a few extra details and notes on my experience__
 
-![](pokemontage.jpg)
+{% blogImage "pokemontage.jpg", "" %}
 
 _Girl with a pearl earring, Cute Obama creature, Donald Trump, Boris Johnson, Totoro, Hello Kitty_
 
@@ -32,7 +32,7 @@ Turns out that this is basically the same mechanism that enabled [[toonify yours
 
 It does seems a bit excessive to fine tune the whole unet as I did in the example above. There are probably lots of different strategies you could adopt trying to freeze different parts of the model, or even try something like [[stylegan-network-blending:layer swapping]]. One little experiment I tried along these lines to to fine tune only the Attention layers in the the unet. This version helps to preserve the original abilities of the model, but reduces the quality of the Pokemon produced. It's neat the model still remembers how to produce non-pokemon images, but this isn't quite what we want for this application, as it's good that the model ends up producing nothing but Pokemon!
 
-![](compare.jpg)
+{% blogImage "compare.jpg", "" %}
 
 _Left is the fully fine-tuned model. Right is attention layers only. The right model can clearly generate a more "normal" yoda, but is less good at making Pokemon._
 
