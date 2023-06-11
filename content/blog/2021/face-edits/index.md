@@ -54,7 +54,7 @@ As the output of the model is constrained by the pre-trained generative model, i
 
 This is actually the same technique I used to mock up a face editor app integrated with GIMP
 
-<Vimeo vimeoId="536038892" />
+https://vimeo.com/536038892
 
 There's also no particular reason why this should be limited to faces. I'd love to see more of these techniques applied to editing landscape images, but this would require a high quality landscape model trained using StyleGAN2...
 

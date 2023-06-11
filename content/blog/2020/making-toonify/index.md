@@ -3,7 +3,7 @@ title: Making Toonify Yourself
 date: "2020-09-20"
 description: The story of deploying a deep neural network to the cloud and Toonifying tens of thousands of images an hour.
 cover: toonify.jpg
---- 
+---
 
 _If you'd like to keep Toonify Yourself free for everyone to play with, please consider donating to cover running costs at Ko-fi:_
 
@@ -11,7 +11,10 @@ _If you'd like to keep Toonify Yourself free for everyone to play with, please c
 
 So [Doron Adler](https://linktr.ee/Norod78) and I recently released our toonification translation model at our [Toonify Yourself](https://toonify.justinpinkney.com) website. It turned out to be pretty popular with tens of thousands people visiting in the 22 hours it was running for, submitting almost a quarter of a million images for toonification.
 
-<Tweet tweetLink="Buntworthy/status/1306236896125870080" />
+https://www.twitter.com/Buntworthy/status/1306236896125870080
+
+regex to capture the above twitter link is:
+
 
 It got quite a bit of interest on social media, and picked up on a few websites. Unfortunately we had to turn off the toonification server before costs started to get out of hand, but we're working on bringing it back so people can carry on playing with the model for free.
 
@@ -48,7 +51,7 @@ So after some beta testing with friends I announced the release of the [Toonify 
 Some were complaining that their faces were never detected no matter what they submitted, and I fairly quickly figured out (and many helpful people online started to point out) that it was an issue with image rotation on iPhones[^transpose].
 
 By the next morning traffic started to really pick up, partly due to getting on the front page of [Hacker News](https://news.ycombinator.com/item?id=24494377). I was starting to get a little bit twitchy seeing the number of containers spun up on Cloud Run steadily increasing. As lunch time approached we were getting close to 25,000 page views an hour, at times this was requiring 100 containers to service the traffic, and thing were going up fast.
-    
+
 {% blogImage "page-views.png", "" %}
 
 The measly number of free cpu and ram minutes had long since evaporated, and I was getting a little concerned about what the cloud bill was going to be after I came back from an afternoon out of the house. So rather than limit things to a level that most people would get a non-response from the site, I decided to turn off the model and switch to an apology message.
@@ -65,7 +68,7 @@ The model takes about 5 seconds to run inference on whatever hardware Cloud Run 
 
 I'm still pretty amazed that it was so easy to build a site which could service so much traffic and do some serious image processing in the cloud. I've never used any of this scalable serverless technology before, but it was incredibly easy to get going!
 
-## Feedback 
+## Feedback
 
 A lot of people commented that the images produced didn't preserve enough of the original character of the person, that they ended up looking pretty generic, and that a human cartoonist could do a far better job. I fully agree, there is not way deep learning is going to outperform a skilled artist any time soon! But there is also no way you could get skilled human artists to make cartoon versions of people for 30 cents per thousand.
 
@@ -103,7 +106,7 @@ and many many more...
 
 I was even interviewed on the excellent Cold Fusion YouTube channel:
 
-<YouTube youTubeId="KZ7BnJb30Cc" />
+https://youtu.be/KZ7BnJb30Cc
 
 
 [^style-transfer]: For a classic example see the work on neural Style Transfer.

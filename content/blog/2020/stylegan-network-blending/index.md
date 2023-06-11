@@ -15,7 +15,7 @@ In my previous post about attempting to create an [[ukiyoe-yourself:ukiyo-e port
 
 The above example worked ok, but after the a [recent Twitter thread](https://twitter.com/AydaoGMan/status/1295876628762046464?s=20) popped up again on model interpolation, I realised that I had missed a really obvious variation on my earlier experiments. Rather than taking the low resolution layers (pose) from normal photos and high res layers (texture) from ukiyo-e I figured it would surely be interesting to try the other way round[^texture].
 
-<Vimeo vimeoId="451284388" />
+https://vimeo.com/451284388
 
 It was indeed interesting and deeply weird too! Playing around with the different levels at which the swap occurs gives some control over how realistic the images are. If you've saved a bunch of network snapshots during transfer learning the degree to which the networks have diverged also give some interesting effects.
 
@@ -31,7 +31,7 @@ You also see some wonderfully weird effects because of the fact that ukiyo-e art
 
 You can also swap models which are trained on very different domains (but one still has to be fine-tuned from the other). For example the Frea Buckler model trained by [Derrick Schultz](https://artificial-images.com/). Swapping out the original FFHQ trained model into this one is in a sense replacing the rendering to be of the faces model, but the structure to be from the new one.
 
-<Vimeo vimeoId="451291240" />
+https://vimeo.com/451291240
 
 As well as being pretty mesmerising it seems to give some hints as to how the model transferred domains. It looks like it's mostly adapted features corresponding to the background of the original images to serve as the structural elements of the new model. Many of the new images look like an "over the shoulder" view point, and the original faces have been pushed out of frame (although as noticed they are still lurking there [deep in the model](https://youtu.be/s3ZC2rMczt8)). Although you could probably understand these details of the mechansim of domain transfer using some statistical analysis of the network weights and internal activations, this is quite a simple and pretty way of getting an intuition.
 
@@ -50,11 +50,11 @@ I plan to write a more detailed article on some of the effects of different blen
 
 Shortly after sharing my code and approach, some of the wonderful StyleGAN community on Twitter started trying things out. The first really amazing network blend was by Doron Adler, he mixed a model fine-tuned on [just a few images of Disney/Dreamworks/Pixar](https://twitter.com/Buntworthy/status/1297976798236598274) characters to give these uncannily cartoonish characters.
 
-<Tweet tweetLink="Norod78/status/1297513475258953728" />
+https://www.twitter.com/Norod78/status/1297513475258953728
 
 He also used a StyleGAN encoder to find the latent representation of a real face in the "real face" model then generate an image from the representation using the "blended" model with amazing semi-real cartoonification results:
 
-<Tweet tweetLink="Norod78/status/1297849293299212288" />
+https://www.twitter.com/Norod78/status/1297849293299212288
 
 I think this approach would make a great way of generating a paired image dataset for training a pix2pixHD model, i.e. the [StyleGAN Distillation approach](https://arxiv.org/abs/2003.03581).
 
@@ -63,7 +63,7 @@ I think this approach would make a great way of generating a paired image datase
 
 It was originally [Arfa](https://twitter.com/arfafax) who asked me to share some of the layer swapping code I had been working on. He followed up by combining both the weight interpolation and layer swapping ideas, combining a bunch of different models (with some neat visualisations):
 
-<Tweet tweetLink="arfafax/status/1297694374470402055" />
+https://www.twitter.com/arfafax/status/1297694374470402055
 
 The results are pretty amazing, this sort of __"resolution dependent model interpolation"__ is the logical generalisation of both the interpolation and swapping ideas. It looks like it gives a completely new axis of control over a generative model (assuming you have some fine-tuned models which can be combined). Take these example frames from one of the above videos:
 
@@ -103,7 +103,7 @@ On the left is the output of the __anime model__, on the right the __my little p
 
 Then he applied First Order Motion model and you get some pretty amazing results:
 
-<Tweet tweetLink="CitizenPlain/status/1308824021803372549" />
+https://www.twitter.com/CitizenPlain/status/1308824021803372549
 
 ## Going further
 

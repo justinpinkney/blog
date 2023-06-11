@@ -16,7 +16,7 @@ __If you're interested in how the website [Toonify Yourself](https://toonify.jus
 
 In a [[stylegan-network-blending:previous post]] I introduced the idea of __Layer Swapping__ (or more generally network blending) for StyleGAN models. I briefly pointed to a fantastic model created by [Doron Adler](https://linktr.ee/Norod78) that generates almost photo-realistc people who seem to have come straight out of your favourite Disney/Pixar/Dreamworks animated movie.
 
-<Tweet tweetLink="Norod78/status/1297513475258953728" />
+https://www.twitter.com/Norod78/status/1297513475258953728
 
 ## How to make a photo-realistic cartoon model
 

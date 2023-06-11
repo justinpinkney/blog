@@ -10,6 +10,7 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 const pluginBlogImages = require("./eleventy.config.blogimages.js");
+const embedEverything = require("eleventy-plugin-embed-everything");
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -31,6 +32,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginDrafts);
 	eleventyConfig.addPlugin(pluginImages);
 	eleventyConfig.addPlugin(pluginBlogImages);
+
+	// Third-party plugins
+	eleventyConfig.addPlugin(embedEverything);
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);

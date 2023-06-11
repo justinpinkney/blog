@@ -31,8 +31,8 @@ If you want to train a model which is similar to an existing one, for example [[
 
 Transfer learning (aka fine-tuning) also sometimes gives you some pretty interesting results just as the model starts to transform the generated images from the original objects to the new thing you're training for. See a couple of nice examples below.
 
-<Tweet tweetLink="Norod78/status/1255200236181630979" />
-<Tweet tweetLink="mmariansky/status/1226756838613491713" />
+https://www.twitter.com/Norod78/status/1255200236181630979
+https://www.twitter.com/mmariansky/status/1226756838613491713
 
 In fact you can go further and combine two models, one which has been fine-tuned from another and either do weight averaging or [[ukiyoe-yourself:layer swapping]] to effectively mix the outputs.
 

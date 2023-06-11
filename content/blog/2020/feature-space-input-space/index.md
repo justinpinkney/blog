@@ -31,7 +31,7 @@ It is standard practice to normalise the inputs of a machine learning model, at 
 
 The invention of batch normalisation was extremely important important in deep learning, it allowed efficient training of increasingly large networks at higher learn rates and has become standard practice in many neural network architectures. Since the original paper's discussion of how batchnorm helps by reducing "internal covariate shift" there has been some confusion as to how exactly it works, but for the best discussion I've seen, look at this Twitter thread by David Page:
 
-<Tweet tweetLink="dcpage3/status/1171867587417952260" />
+https://twitter.com/dcpage3/status/1171867587417952260
 
 Clearly, adapting the concept of input normalisation to feature space is not trivial, and batch normalisation requires various new mechanisms and non-obvious assumptions to work (e.g. that batch statistics are sufficient, learned scale and offset parameters, and changes in behaviour between train and test time). In fact many of these unusual features of mean that Batch Normalisation turns out to often be a problematic layer.
 

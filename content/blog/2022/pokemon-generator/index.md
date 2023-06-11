@@ -24,7 +24,7 @@ I've been doing some experiments with the model since it came out. One was chang
 
 One of the amazing things about this model is that it manages to remember some of the "general knowledge" of the original stable diffusion. It doesn't seem obvious that it should do so after training for a few thousand steps on such a limited dataset, but there's a trick involved here! When fine tuning on the Pokemon the model actually starts to overfit quite quickly, and if you sample from it in a naive way it just produces Pokemon-ish gibberish for novel prompts (it has catastrophically forgotten the original data it was trained on), but like many modern networks Stable Diffusion keeps an exponential moving average (EMA) version of the model during training, which is usually used for inference as it gives better quality. So if we use the EMA weights we're actually using an average of the original model and the fine-tuned one. This turns out to be essential in order to turn all those famous people into Pokemon. You can even fine tune this effect by directly averaging the new model with the weights of the original to control the amount of Pokemonification.
 
-<Tweet tweetLink="Buntworthy/status/1567804278949007360" />
+https://www.twitter.com/Buntworthy/status/1567804278949007360
 
 Turns out that this is basically the same mechanism that enabled [[toonify yourself]], fine tuning and averaging model means you can end up with an effective mix of the original content with the style you fine-tuned on!
 
@@ -42,17 +42,17 @@ An obvious next step is to try and compare the above fine-tuning with a method l
 
 Some people pointed out that the model has a tendency to randomly produce a certain Pokemon, Vivillon for seemingly random prompts. Even when it doesn't make Vivillon exactly it still has a strong preference to make circular radially patterned Pokemon when the prompt is a bit more abstract.
 
-<Tweet tweetLink="JanelleCShane/status/1575855505922088960" />
+https://www.twitter.com/JanelleCShane/status/1575855505922088960
 
 Someone pointed out that Vivillon actually has several variations, each of which is a different Pokemon, this means it appears a bunch of times in the original dataset. The model clearly ended up overfitting to Vivillon, I might make a version where I remove all but one Vivillon, but right now I quite enjoy that Vivillon occasionally appears when you least expect it like a Pokemon Rick Roll.
 
-<Tweet tweetLink="MrCheeze_/status/1575857534874705920" />
+https://www.twitter.com/MrCheeze_/status/1575857534874705920
 
 ## Coverage
 
 I tweeted about the model when I released it, but seems like it took a little while before it really took off. In particular this tweet seemed to really reach the right audience:
 
-<Tweet tweetLink="JDune5/status/1574143254366388232" />
+https://www.twitter.com/JDune5/status/1574143254366388232
 
 Since then it's been featured here:
 
