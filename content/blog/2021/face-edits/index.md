@@ -3,6 +3,7 @@ title: Style Space Face Editing
 date: "2021-04-08"
 description: A runway app to make silly face edits using the StyleSpace of StyleGAN
 cover: "images/combo.jpg"
+tags: ["gan", "stylegan"]
 ---
 
 ![](https://github.com/justinpinkney/pixel2style2pixel/raw/master/images/face-edit-runway.gif)
@@ -19,7 +20,7 @@ A little while back I ported a couple of recent machine learning models to Runwa
 
 PSP demonstrates a highly effective method for encoding real images in the latent space of a pre-trained generative model. The [repository](https://github.com/eladrich/pixel2style2pixel) provides a pre-trained encoder for finding the latent vector corresponding to an image your supply. There is also some cool follow up work called Encoder4Editing which might be even better for this application.
 
-They even use the good old [[toonify-yourself:Toonify model]] in their research as part of demonstrating the flexibility and generality of their face encoding approach.
+They even use the good old [Toonify model](../toonify-yourself) in their research as part of demonstrating the flexibility and generality of their face encoding approach.
 
 {% blogImage "images/psp.jpg", "" %}
 

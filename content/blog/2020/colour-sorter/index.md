@@ -3,12 +3,13 @@ title: Colour Sorter 🌈
 date: "2020-06-08"
 description: Takes a picture and rearranges the pixels to make another
 cover: 2.jpg
+tags: 'generative art'
 ---
 
 {% blogImage "ColourSorterLogo.jpg", "" %}
 __Takes a picture and rearranges the pixels to make another.__
 
-A little [[generative art]] Java application I made a long time ago which implements an algorithm to take all the pixels from an image and use them to make a new image, based on a (sort of) sorting algorithm.
+A little generative art Java application I made a long time ago which implements an algorithm to take all the pixels from an image and use them to make a new image, based on a (sort of) sorting algorithm.
 
 https://youtu.be/FCp3UCBGCmc
 

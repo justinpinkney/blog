@@ -3,7 +3,10 @@ title: Big images with Leaflet 🗺️
 date: "2020-07-13"
 description: Incorporating big zoomable images into an MDX blog with Leaflet
 cover: leaflet.jpg
+tags: "generative art"
 ---
+
+_This is all old. Since then I've updated my blog to run on 11ty and life is much simpler._
 
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="

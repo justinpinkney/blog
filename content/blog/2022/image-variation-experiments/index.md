@@ -6,6 +6,7 @@ cover: "./output_37_2.jpg"
 tags:
     - image-variation
     - diffusion
+    - clip
 ---
 {% css %}
 img {

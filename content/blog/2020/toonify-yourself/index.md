@@ -12,9 +12,9 @@ __TLDR: If you want a Colab Notebook to toonify yourself click here:__
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1s2XPNMwf6HDhrJ1FMwlW1jl-eQ2-_tlk?usp=sharing)
 
-__If you're interested in how the website [Toonify Yourself](https://toonify.justinpinkney.com) works, see this [[making-toonify:followup post]]__
+__If you're interested in how the website [Toonify Yourself](https://toonify.justinpinkney.com) works, see this [followup post](../making-toonify)__
 
-In a [[stylegan-network-blending:previous post]] I introduced the idea of __Layer Swapping__ (or more generally network blending) for StyleGAN models. I briefly pointed to a fantastic model created by [Doron Adler](https://linktr.ee/Norod78) that generates almost photo-realistc people who seem to have come straight out of your favourite Disney/Pixar/Dreamworks animated movie.
+In a [previous post](../stylegan-network-blending) I introduced the idea of __Layer Swapping__ (or more generally network blending) for StyleGAN models. I briefly pointed to a fantastic model created by [Doron Adler](https://linktr.ee/Norod78) that generates almost photo-realistc people who seem to have come straight out of your favourite Disney/Pixar/Dreamworks animated movie.
 
 https://www.twitter.com/Norod78/status/1297513475258953728
 
@@ -42,7 +42,7 @@ The output is OK for such a small amount of training on a small dataset, it's cl
 
 ### Blend the models
 
-But as this model was fine tuned from the original faces model, we can perform a trick where we directly [[stylegan-network-blending:swap parts of the models]] around. This gets interesting because, due to the structure of StyleGAN,  different layers in the model affect the appearance in different ways. So low resolution layers affect the pose of the head and shape of the face, while high resolution layers control things like lighting and texture. When Doron used my layer swapping script ([Colab here](https://colab.research.google.com/drive/1tputbmA9EaXs9HL9iO21g7xN7jz_Xrko?usp=sharing)) to take the high resolution layers from the original model, and the low resolution from his fine-tuned cartoon model. You end up with a hybrid which has the structure of a cartoon face, but photo realistic rendering!
+But as this model was fine tuned from the original faces model, we can perform a trick where we directly [swap parts of the models](../stylegan-network-blending/) around. This gets interesting because, due to the structure of StyleGAN,  different layers in the model affect the appearance in different ways. So low resolution layers affect the pose of the head and shape of the face, while high resolution layers control things like lighting and texture. When Doron used my layer swapping script ([Colab here](https://colab.research.google.com/drive/1tputbmA9EaXs9HL9iO21g7xN7jz_Xrko?usp=sharing)) to take the high resolution layers from the original model, and the low resolution from his fine-tuned cartoon model. You end up with a hybrid which has the structure of a cartoon face, but photo realistic rendering!
 
 {% blogImage "m2.jpg", "" %}
 
@@ -66,7 +66,7 @@ BTW all credit to [Doron](https://twitter.com/Norod78) for making the model and 
 
 ## Next steps
 
-I followed up this stuff by making a website where anyone could Toonify themselves in a few seconds, it got pretty popular (too popular!). See the details of how it was made [[making-toonify:here]].
+I followed up this stuff by making a website where anyone could Toonify themselves in a few seconds, it got pretty popular (too popular!). See the details of [how it was made](../making-toonify).
 
 ## More examples
 

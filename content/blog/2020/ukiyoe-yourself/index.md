@@ -3,7 +3,7 @@ title: Ukiyo-e Yourself with StyleGAN 2
 date: "2020-06-10"
 description: Transforming normal faces to Ukiyo-e style portraits using Generative Adversarial Networks
 cover: mr79.jpg
-tags: ["ukiyoe", "gan", "deep learning"]
+tags: ["ukiyo-e", "gan", "stylegan"]
 ---
 <!--
 {%- css %}
@@ -82,7 +82,7 @@ There are still some artifacts but I think it's a fun technique and sometimes gi
 {% blogImage "./examples/seed0092.png.jpg", "" %}
 {% blogImage "./examples/seed0094.png.jpg", "" %}
 
-Since this original example I have put a bit more work into testing out these layer swapping ideas. You can get code to do it yourself, and see what other weird and wonderful things myself and others have come up with [[stylegan-network-blending:in this post]].
+Since this original example I have put a bit more work into testing out these layer swapping ideas. You can get code to do it yourself, and see what other weird and wonderful things myself and others have come up with [in this post](../stylegan-network-blending).
 
 ## Other thoughts
 

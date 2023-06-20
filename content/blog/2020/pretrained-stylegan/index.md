@@ -3,6 +3,7 @@ title: Awesome Pretrained StyleGAN
 date: "2020-07-03"
 description: A repository of pre-trained models for StyleGAN 1 and 2
 cover: pretrained.jpg
+tags: ['gan', 'stylegan']
 ---
 
 I maintain two collections of links to StyleGAN models pre-trained on a variety of datasets:
@@ -23,7 +24,7 @@ Most of these have been shared via the very active StyleGAN creative community o
 
 Apart from just generating some example image of whatever the model was trained on, pre-trained models are a super useful for training your own model using transfer learning.
 
-If you want to train a model which is similar to an existing one, for example [[ukiyoe-yourself:Ukiyo-e faces]] then taking a pre-trained model as your starting point to get you some decent results within just a few hours rather than days of training time.
+If you want to train a model which is similar to an existing one, for example [Ukiyo-e faces](../ukiyoe-yourself) then taking a pre-trained model as your starting point to get you some decent results within just a few hours rather than days of training time.
 
 {% blogImage "../ukiyoe-yourself/fakes000312.jpg", "" %}
 
@@ -34,7 +35,7 @@ Transfer learning (aka fine-tuning) also sometimes gives you some pretty interes
 https://www.twitter.com/Norod78/status/1255200236181630979
 https://www.twitter.com/mmariansky/status/1226756838613491713
 
-In fact you can go further and combine two models, one which has been fine-tuned from another and either do weight averaging or [[ukiyoe-yourself:layer swapping]] to effectively mix the outputs.
+In fact you can go further and combine two models, one which has been fine-tuned from another and either do weight averaging or [layer swapping](../ukiyoe-yourself) to effectively mix the outputs.
 
 {% blogImage "../ukiyoe-yourself/montage.jpg", "" %}
 
@@ -42,7 +43,7 @@ In fact you can go further and combine two models, one which has been fine-tuned
 
 Pre-trained models can also be useful if you want to investigate the properties of specific modifications and manipulations of a trained GAN. In fact my Awesome StyleGAN made and appearance in the excellent [GANSpace](https://github.com/harskish/ganspace) [paper](https://arxiv.org/abs/2004.02546).
 
-A well trained model is also useful if you just want to [[matlab-stylegan:  mess around with the internals of StyleGAN]],
+A well trained model is also useful if you just want to [mess around with the internals of StyleGAN](../matlab-stylegan),
 
 ## Maybe transfer learning will become the standard way to train a GAN
 

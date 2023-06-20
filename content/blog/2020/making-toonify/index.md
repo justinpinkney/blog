@@ -3,6 +3,7 @@ title: Making Toonify Yourself
 date: "2020-09-20"
 description: The story of deploying a deep neural network to the cloud and Toonifying tens of thousands of images an hour.
 cover: toonify.jpg
+tags: ['toonify', 'gan']
 ---
 
 _If you'd like to keep Toonify Yourself free for everyone to play with, please consider donating to cover running costs at Ko-fi:_
@@ -22,7 +23,7 @@ A lot of people have expressed interest in how the model work and how the websit
 
 ## Making an efficient Toonification model
 
-__If you want to know about the details of the original Toonification model, see [[toonify-yourself:this blog post]].__
+__If you want to know about the details of the original Toonification model, see [this blog post](../toonify-yourself).__
 
 The original Toonification method involved an expensive optimisation process to encode a person's face using the blended StyleGAN model which can take several minutes to run even on a GPU. Clearly this wasn't going to cut it as a web app! A common pattern in deep learning is replacing expensive optimisations with more neural networks[^style-transfer]. We used the basic idea described in _StyleGAN2 Distillation for Feed-Forward Image Manipulation_[^distillation], i.e. training a pix2pixHD model to apply the transformation to any arbitrary image, rather than first having to perform the optimisation step.
 

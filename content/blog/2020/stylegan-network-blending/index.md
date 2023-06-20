@@ -3,13 +3,14 @@ title: StyleGAN network blending
 date: "2020-08-25"
 description: Mixing GAN models for weird and wonderful effects
 cover: ukiyoe/41.jpg
+tags: ['gan', 'stylegan', 'toonify', "ukiyo-e"]
 ---
 
 ## Making Ukiyo-e portraits real
 
 {% blogImage "ukiyoe/3.jpg", "" %}
 
-In my previous post about attempting to create an [[ukiyoe-yourself:ukiyo-e portrait generator]] I introduced a concept I called "layer swapping" in order to mix two StyleGAN models[^version]. The aim was to blend a __base model__ and another created from that using transfer learning, the __fine-tuned model__. The method was different to simply interpolating the weights of the two models[^interpolation] as it allows you to control independently which model you got low and high resolution features from; in my example I wanted to get the pose from normal photographs, and the texture/style from ukiyo-e prints[^style-transfer].
+In my previous post about attempting to create an [ukiyo-e portrait generator](../ukiyoe-yourself) I introduced a concept I called "layer swapping" in order to mix two StyleGAN models[^version]. The aim was to blend a __base model__ and another created from that using transfer learning, the __fine-tuned model__. The method was different to simply interpolating the weights of the two models[^interpolation] as it allows you to control independently which model you got low and high resolution features from; in my example I wanted to get the pose from normal photographs, and the texture/style from ukiyo-e prints[^style-transfer].
 
 {% blogImage "../ukiyoe-yourself/mr79.jpg", "" %}
 
@@ -73,7 +74,7 @@ On the left is the output of the __anime model__, on the right the __my little p
 
 ### Parameter tuning
 
-[Nathan Shipley](https://twitter.com/CitizenPlain) made some beautiful experiments trying to get the [[toonify-yourself:Toonification effect]] just right by adjusting two of the key parameters: the amount of transfer learning to apply (measured in thousands of iterations) and the resolution layer from which to swap. By tuning these two you can pick out just the degree of Toonificaiton to apply, see this lovely figure made by Nathan:
+[Nathan Shipley](https://twitter.com/CitizenPlain) made some beautiful experiments trying to get the [Toonification effect](../toonify-yourself) just right by adjusting two of the key parameters: the amount of transfer learning to apply (measured in thousands of iterations) and the resolution layer from which to swap. By tuning these two you can pick out just the degree of Toonificaiton to apply, see this lovely figure made by Nathan:
 
 
 
@@ -120,4 +121,4 @@ I think there's lots of potential to look at these blending strategies further, 
 
 [^texture]: It seems to be a general rule that neural networks are better at adding texture than removing it.
 
-[^models]: If you're in search of some models to blend then see collection of [[pretrained stylegan]] models (I intend to add a field as to which ones have been fine-tuned in the near future.)
+[^models]: If you're in search of some models to blend then see collection of [pretrained stylegan](../pretrained-stylegan/) models (I intend to add a field as to which ones have been fine-tuned in the near future.)

@@ -3,13 +3,14 @@ title: Text to Pokemon Generator
 date: "2022-09-08"
 description: Fine tuning Stable Diffusion to generate Pokemon
 cover: "poke-prev.jpg"
+tags: 'diffusion'
 ---
 
 If you want to just try out the model look here:
 [![Open in Replicate](https://img.shields.io/badge/%F0%9F%9A%80-Open%20in%20Replicate-%23fff891)](https://replicate.com/lambdal/text-to-pokemon)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LambdaLabsML/lambda-diffusers/blob/main/notebooks/pokemon_demo.ipynb)
 
-__All of this work was done as part of my [[day job]] at [Lambda Labs](https://lambdalabs.com/) and all the real details of how the model was made, and how you can make one yourself are in this post on the [Lambda Examples repo](https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning). This blog post just has a few extra details and notes on my experience__
+__All of this work was done as part of my role at [Lambda Labs](https://lambdalabs.com/) and all the real details of how the model was made, and how you can make one yourself are in this post on the [Lambda Examples repo](https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning). This blog post just has a few extra details and notes on my experience__
 
 {% blogImage "pokemontage.jpg", "" %}
 
@@ -26,17 +27,17 @@ One of the amazing things about this model is that it manages to remember some o
 
 https://www.twitter.com/Buntworthy/status/1567804278949007360
 
-Turns out that this is basically the same mechanism that enabled [[toonify yourself]], fine tuning and averaging model means you can end up with an effective mix of the original content with the style you fine-tuned on!
+Turns out that this is basically the same mechanism that enabled [toonify yourself](../toonify-yourself), fine tuning and averaging model means you can end up with an effective mix of the original content with the style you fine-tuned on!
 
 ## More experiments
 
-It does seems a bit excessive to fine tune the whole unet as I did in the example above. There are probably lots of different strategies you could adopt trying to freeze different parts of the model, or even try something like [[stylegan-network-blending:layer swapping]]. One little experiment I tried along these lines to to fine tune only the Attention layers in the the unet. This version helps to preserve the original abilities of the model, but reduces the quality of the Pokemon produced. It's neat the model still remembers how to produce non-pokemon images, but this isn't quite what we want for this application, as it's good that the model ends up producing nothing but Pokemon!
+It does seems a bit excessive to fine tune the whole unet as I did in the example above. There are probably lots of different strategies you could adopt trying to freeze different parts of the model, or even try something like [layer swapping](../stylegan-network-blending). One little experiment I tried along these lines to to fine tune only the Attention layers in the the unet. This version helps to preserve the original abilities of the model, but reduces the quality of the Pokemon produced. It's neat the model still remembers how to produce non-pokemon images, but this isn't quite what we want for this application, as it's good that the model ends up producing nothing but Pokemon!
 
 {% blogImage "compare.jpg", "" %}
 
 _Left is the fully fine-tuned model. Right is attention layers only. The right model can clearly generate a more "normal" yoda, but is less good at making Pokemon._
 
-An obvious next step is to try and compare the above fine-tuning with a method like [DreamBooth](https://dreambooth.github.io/). If anyone gets round to trying this before I do, please [[find-me:let me know]] how it goes!
+An obvious next step is to try and compare the above fine-tuning with a method like [DreamBooth](https://dreambooth.github.io/). If anyone gets round to trying this before I do, please let me know how it goes!
 
 ## Vivillon is the Rick Astley of Pokemon
 

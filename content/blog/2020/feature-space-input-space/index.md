@@ -17,7 +17,7 @@ TODO find nice diagram of input space and feature space in the network
 
 ## How is Feature space just like Input space?
 
-As pointed out in the original [[batchnorm]] paper we can consider any portion of a network as a "sub-network" which takes in some activations from the previous layers and applies transforms to this. **In this sense the previous layer's feature space is just the input space for the later layers.**
+As pointed out in the original batchnorm paper we can consider any portion of a network as a "sub-network" which takes in some activations from the previous layers and applies transforms to this. **In this sense the previous layer's feature space is just the input space for the later layers.**
 
 Given that there is such a strong connection between input and feature space, it makes sense that anything we can do to improve the training process of the network in one space might be useful to also do in the other.
 
